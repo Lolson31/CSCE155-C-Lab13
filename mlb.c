@@ -105,7 +105,7 @@ void selectionSortTeamsByPayroll(Team *teams, int size) {
   int currIndex = 0;
   for (int i = 0; i < size - 1; i++) {
     currIndex = i;
-    for (int j = i + 1; j < n; j++){
+    for (int j = i + 1; j < size; j++){
       if (teams[j].payroll < teams[currIndex].payroll){
         currIndex = j;
       }
