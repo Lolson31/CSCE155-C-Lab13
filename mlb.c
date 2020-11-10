@@ -118,7 +118,18 @@ void selectionSortTeamsByPayroll(Team *teams, int size) {
 
 void selectionSortTeams(Team *teams, int size,
                         int (*compar)(const void *, const void *)) {
-  // TODO: implement this function
+  int currIndex = 0;
+  for (int i = 0; i < size - 1; i++) {
+    currIndex = i;
+    for (int j = i + 1; j < size; j++){
+      if (compar == -1){
+        currIndex = j;
+      }
+    }
+    Team temp = teams[i];
+    teams[i] = teams[currIndex];
+    teams[currIndex] = temp;
+  }
 }
 
 int teamComparisonByName(const void *s1, const void *s2) {
