@@ -20,7 +20,7 @@ Team *createTeam(char *name, int wins, int loss, char *city, char *state,
   strcpy(t->state, state);
   t->payroll = payroll;
   t->averageSalary = aveSalary;
-  return t;
+  return t; 
 }
 
 void printTeam(const Team *t) {
