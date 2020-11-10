@@ -20,7 +20,7 @@ Team *createTeam(char *name, int wins, int loss, char *city, char *state,
   strcpy(t->state, state);
   t->payroll = payroll;
   t->averageSalary = aveSalary;
-  return t; 
+  return t;
 }
 
 void printTeam(const Team *t) {
@@ -102,7 +102,18 @@ void bubbleSortTeams(Team *teams, int size,
 }
 
 void selectionSortTeamsByPayroll(Team *teams, int size) {
-  // TODO: implement this function
+  int currIndex = 0;
+  for (int i = 0; i < size - 1; i++) {
+    currIndex = i;
+    for (int j = i + 1; j < n; j++){
+      if (teams[j].payroll < teams[currIndex].payroll){
+        currIndex = j;
+      }
+    }
+    Team temp = teams[i];
+    teams[i] = teams[currIndex];
+    teams[currIndex] = temp;
+  }
 }
 
 void selectionSortTeams(Team *teams, int size,
