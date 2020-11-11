@@ -28,6 +28,8 @@ int main(int argc, char **argv) {
   printAllTeams(teams, NUM_TEAMS);
 
   printf("(Selection with comparator) Sorted by payroll: \n");
+  selectionSortTeams(teams, NUM_TEAMS, teamComparisonByPayroll(const void *s1, const void *s2));
+  printAllTeams(teams, NUM_TEAMS);
   // TODO: change this line to use your comparator for payroll in decreasing
   // order
   selectionSortTeams(teams, NUM_TEAMS, NULL);
