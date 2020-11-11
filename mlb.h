@@ -75,4 +75,7 @@ int teamComparisonByState(const void *s1, const void *s2);
  */
 int teamComparisonByStateCity(const void *s1, const void *s2);
 
-// TODO: add your comparator function definition(s) here
+/**
+ * A comparator that orders Teams by payroll
+ */
+int teamComparisonByPayroll(const void *s1, const void *s2)
