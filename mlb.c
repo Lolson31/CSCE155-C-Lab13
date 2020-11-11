@@ -175,6 +175,7 @@ int teamComparisonByPayroll(const void *s1, const void *s2) {
   const Team *t2 = (const Team *)s2;
   double t1_Payroll = t1->payroll;
   double t2_Payroll = t2->payroll;
+  
   if (t1_Payroll < t2_Payroll) {
     return 1;
   } else if (t1_Payroll == t2_Payroll) {

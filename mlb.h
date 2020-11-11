@@ -78,4 +78,4 @@ int teamComparisonByStateCity(const void *s1, const void *s2);
 /**
  * A comparator that orders Teams by payroll
  */
-int teamComparisonByPayroll(const void *s1, const void *s2)
+int teamComparisonByPayroll(const void *s1, const void *s2);
