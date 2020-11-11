@@ -28,6 +28,8 @@ int main(int argc, char **argv) {
   printAllTeams(teams, NUM_TEAMS);
 
   printf("(Selection with comparator) Sorted by payroll: \n");
+  // TODO: change this line to use your comparator for payroll in decreasing
+  // order
   selectionSortTeams(teams, NUM_TEAMS, teamComparisonByPayroll);
   printAllTeams(teams, NUM_TEAMS);
 
@@ -43,8 +45,9 @@ int main(int argc, char **argv) {
   qsort(teams, 16, sizeof(Team), teamComparisonByStateCity);
   printAllTeams(teams, NUM_TEAMS);
 
-  printf("(Quick) Sorted by win percentage, increasing: \n");
+  printf("(Quick) Sorted by payroll, increasing: \n");
   // TODO: call qsort using your comparator function here
+  qsort(teams, 16, sizeof(Team), teamComparisonByPayroll);
   printAllTeams(teams, NUM_TEAMS);
 
   /* search, find */
@@ -73,6 +76,9 @@ int main(int argc, char **argv) {
   printTeam(caTeam);
 
   // TODO: Finish Activity 4 here
+  createTeam("Cubs", 0, 0, "", "", 0, 0);
+  qsort(teams, 16, sizeof(Team), teamComparisonByName);
+  caTeam = bsearch(caKey, teams, &elems, sizeof(Team), teamComparisonByName);
   printf("Search result for Cubs (via name): \n");
 
   return 0;

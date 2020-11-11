@@ -102,11 +102,11 @@ void bubbleSortTeams(Team *teams, int size,
 }
 
 void selectionSortTeamsByPayroll(Team *teams, int size) {
-  int currIndex = 0;
+  int currIndex;
   for (int i = 0; i < size - 1; i++) {
     currIndex = i;
     for (int j = i + 1; j < size; j++){
-      if (teams[j].payroll < teams[currIndex].payroll){
+      if (teams[j].payroll > teams[currIndex].payroll){
         currIndex = j;
       }
     }
@@ -118,7 +118,7 @@ void selectionSortTeamsByPayroll(Team *teams, int size) {
 
 void selectionSortTeams(Team *teams, int size,
                         int (*compar)(const void *, const void *)) {
-  int currIndex = 0;
+  int currIndex;
   for (int i = 0; i < size - 1; i++) {
     currIndex = i;
     for (int j = i + 1; j < size; j++){
@@ -176,7 +176,7 @@ int teamComparisonByPayroll(const void *s1, const void *s2) {
   double t1_Payroll = t1->payroll;
   double t2_Payroll = t2->payroll;
 
-  if (t1_Payroll < t2_Payroll) {
+  if (t1_Payroll > t2_Payroll) {
     return 1;
   } else if (t1_Payroll == t2_Payroll) {
     return 0;
