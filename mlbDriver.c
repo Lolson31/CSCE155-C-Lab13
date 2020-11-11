@@ -30,10 +30,6 @@ int main(int argc, char **argv) {
   printf("(Selection with comparator) Sorted by payroll: \n");
   selectionSortTeams(teams, NUM_TEAMS, teamComparisonByPayroll);
   printAllTeams(teams, NUM_TEAMS);
-  // TODO: change this line to use your comparator for payroll in decreasing
-  // order
-  selectionSortTeams(teams, NUM_TEAMS, NULL);
-  printAllTeams(teams, NUM_TEAMS);
 
   printf("(Quick) Sorted by name: \n");
   qsort(teams, 16, sizeof(Team), teamComparisonByName);
